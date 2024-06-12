@@ -1,0 +1,8 @@
+microservices:
+ - app: user-auth
+   port: 8000
+   version: "1.1.2"
+ - app: user-nav
+   port: 8080
+   version: 1.1.2
+   
