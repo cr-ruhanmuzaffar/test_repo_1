@@ -1,0 +1,44 @@
+{
+    "format_version": "0.1",
+    "terraform_version": "1.2.3",
+    "planned_values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "aws_instance.example",
+            "mode": "managed",
+            "type": "aws_instance",
+            "name": "example",
+            "provider_name": "aws",
+            "values": {
+              "ami": "ami-0c55b159cbfafe1f0",
+              "instance_type": "t2.micro",
+              "tags": {
+                "Name": "ExampleInstance"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "resource_changes": [
+      {
+        "address": "aws_instance.example",
+        "mode": "managed",
+        "type": "aws_instance",
+        "name": "example",
+        "provider_name": "aws",
+        "change": {
+          "actions": ["create"],
+          "before": null,
+          "after": {
+            "ami": "ami-0c55b159cbfafe1f0",
+            "instance_type": "t2.micro",
+            "tags": {
+              "Name": "ExampleInstance"
+            }
+          }
+        }
+      }
+    ]
+}
