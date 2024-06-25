@@ -1,5 +1,5 @@
 
-
+# test comment
 # refer https://www.checkov.io/2.Basics/Installing%20Checkov.html
 
 locals {
