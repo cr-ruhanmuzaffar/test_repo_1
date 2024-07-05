@@ -2,7 +2,7 @@ name: Update Checkov Severity Mapping
 
 on:
   # schedule:
-  #   - cron: "0 0 * * 0" # Runs every Sunday at midnight UTC
+  #   - cron: "0 0 * * 0"  # Runs every Sunday at midnight UTC
   workflow_dispatch: # Allows manual trigger from the GitHub UI
 
 jobs:
@@ -66,12 +66,6 @@ jobs:
 
       - name: Create Pull Request
         if: env.changed == 'true'
-        uses: peter-evans/create-pull-request@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Update Checkov severity mapping"
-          branch: ${{ env.BRANCH_NAME }} # Use the environment variable correctly
-          title: "Update Checkov severity mapping"
-          body: "Automated update of Checkov severity mapping"
-          labels: automated update
-          base: main # Specify the base branch
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
+          gh pr create --title "Update Checkov severity mapping" --body "Automated update of Checkov severity mapping" --base main --head $BRANCH_NAME --label "automated update"
