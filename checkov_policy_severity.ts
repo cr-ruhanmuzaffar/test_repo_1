@@ -1,4 +1,5 @@
 export const checkovPolicySeverity: Record<string, string> = {
+  "CKV_ALI_9": "LOW",
   "CKV_ALI_8": "LOW",
   "CKV_ALI_7": "MEDIUM",
   "CKV_ALI_27": "LOW",
